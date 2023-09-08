@@ -1,0 +1,83 @@
+.login-app-container {
+  display: flex;
+}
+
+.login-card-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  height: 523px;
+  width: 410px;
+  background-color: #fefeff;
+  box-shadow: 0px 4px 16px 0px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.label {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.login-input {
+  background-color: #e2e8f0;
+  outline: none;
+  border: none;
+  width: 360px;
+  height: 35px;
+  border-radius: 2px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.login-logo {
+  width: 53px;
+  height: 43px;
+  align-self: center;
+}
+
+.login-app-name {
+  color: #f7931e;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  text-align: center;
+}
+
+.login-name {
+  font-size: 22px;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.login-btn {
+  background-color: #f7931e;
+  border: none;
+  border-radius: 6px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #ffffff;
+  width: 360px;
+  cursor: pointer;
+}
+
+.login-bg-image-container {
+  width: 40%;
+}
+
+.login-side-img {
+  height: 100%;
+  width: 100%;
+}
