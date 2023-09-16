@@ -1,0 +1,92 @@
+.home-page-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'DM Sans';
+}
+
+.home-page-container {
+  width: 90%;
+  margin: auto;
+}
+
+.carousel-img {
+  width: 100%;
+}
+
+.home-item-heading {
+  color: #183b56;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.home-item-greet {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sorting-container {
+  display: flex;
+  align-items: center;
+}
+
+.sort-icon {
+  height: 24px;
+  width: 24px;
+  margin-right: 5px;
+}
+
+.select-ele {
+  border: none;
+  font-size: 16px;
+  outline: none;
+  width: 100px;
+  padding-left: 10px;
+  appearance: none;
+  width: 70px;
+}
+
+.sort-opt {
+  color: #475569;
+  font-weight: 500;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.restaurants-lists-container {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-btn {
+  border: 1px solid #334155;
+  color: #334155;
+  align-self: center;
+  background-color: transparent;
+  height: 24px;
+  width: 24px;
+}
+
+.arrow-icon {
+  height: 12px;
+  width: 12px;
+  text-align: center;
+  margin-top: 2px;
+}
+
+.pagination-values {
+  color: #334155;
+  font-family: 'Bree Serif';
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
