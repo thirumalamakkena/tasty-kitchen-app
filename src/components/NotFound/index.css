@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'DM Sans';
+}
+
+.m-title {
+  color: #1e293b;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.m-description {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+
+.order-now-btn {
+  background-color: #f7931e;
+  border-radius: 8px;
+  color: #ffffff;
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+}

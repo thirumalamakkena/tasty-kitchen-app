@@ -1,6 +1,9 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {MdSort} from 'react-icons/md'
+
+import Slider from 'react-slick'
+
 import {
   IoIosArrowBack,
   IoIosArrowForward,
@@ -10,6 +13,7 @@ import {
 import RestaurantItem from '../RestaurantItem'
 
 import Header from '../Header'
+import Footer from '../Footer'
 import './index.css'
 
 class Home extends Component {
@@ -17,7 +21,7 @@ class Home extends Component {
     super(props)
 
     this.state = {
-      carousels: [],
+      carouselsList: [],
       restaurantsList: [],
       activePage: 1,
       selectedSortByValue: 'Lowest',
@@ -41,7 +45,7 @@ class Home extends Component {
     const response = await fetch(url, options)
     const offerCarousels = await response.json()
     this.setState({
-      carousels: offerCarousels.offers.map(item => ({
+      carouselsList: offerCarousels.offers.map(item => ({
         id: item.id,
         imageUrl: item.image_url,
       })),
@@ -70,7 +74,7 @@ class Home extends Component {
       rating: data.user_rating.rating,
       totalReviews: data.user_rating.total_reviews,
     }))
-    // console.log(restaurantsData)
+
     this.setState({
       restaurantsList: updatedData,
     })
@@ -103,23 +107,40 @@ class Home extends Component {
     )
 
   render() {
-    const {restaurantsList, activePage} = this.state
+    const {restaurantsList, activePage, carouselsList} = this.state
+    const settings = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    }
     return (
       <>
         <Header />
         <div className="home-page-main-container">
-          <img
-            alt="carousel"
-            className="carousel-img"
-            src="https://assets.ccbp.in/frontend/react-js/restaurants-app-project/carousel-images-jammu-special.jpg"
-          />
+          <div className="carousel-container">
+            <Slider {...settings}>
+              {carouselsList.map(carouselItem => (
+                <div key={carouselItem.id}>
+                  <img
+                    alt="carousel"
+                    className="carousel-img"
+                    src={carouselItem.imageUrl}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+
           <div className="home-page-container">
             <div className="items-heading-sorting-container">
-              <h1 className="home-item-heading">Popular Restaurants</h1>
-              <p className="home-item-greet">
-                Select Your favourite restaurant special dish and make your day
-                happy...
-              </p>
+              <div>
+                <h1 className="home-item-heading">Popular Restaurants</h1>
+                <p className="home-item-greet">
+                  Select Your favourite restaurant special dish and make your
+                  day happy...
+                </p>
+              </div>
 
               <div className="sorting-container">
                 <MdSort className="sort-icon" />
@@ -134,22 +155,23 @@ class Home extends Component {
                 </select>
                 <IoMdArrowDropdown />
               </div>
-              <hr />
-              <ul className="restaurants-lists-container">
-                {restaurantsList.map(restaurantData => (
-                  <RestaurantItem
-                    key={restaurantData.id}
-                    restaurantData={restaurantData}
-                  />
-                ))}
-              </ul>
             </div>
-            <div className="pagination-container">
-              <button type="button" className="arrow-btn">
-                <IoIosArrowBack
-                  className="arrow-icon"
-                  onClick={this.onDecrementPage}
+            <hr className="horizontal-line" />
+            <ul className="restaurants-lists-container">
+              {restaurantsList.map(restaurantData => (
+                <RestaurantItem
+                  key={restaurantData.id}
+                  restaurantData={restaurantData}
                 />
+              ))}
+            </ul>
+            <div className="pagination-container">
+              <button
+                type="button"
+                className="arrow-btn"
+                onClick={this.onDecrementPage}
+              >
+                <IoIosArrowBack className="arrow-icon" />
               </button>
               <p className="pagination-values">{activePage} of 4</p>
               <button
@@ -161,6 +183,7 @@ class Home extends Component {
               </button>
             </div>
           </div>
+          <Footer />
         </div>
       </>
     )

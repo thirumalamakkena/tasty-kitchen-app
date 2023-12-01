@@ -35,19 +35,18 @@ class Header extends Component {
           </button>
         </li>
       </ul>
-      {false && (
-        <button
-          className="delete-icon-btn"
-          type="button"
-          onClick={this.onHideMenu}
-        >
-          <img
-            alt="cross icon"
-            className="delete-icon"
-            src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1694448930/v8o4vipsr6ynzqr4dgqo.png"
-          />
-        </button>
-      )}
+
+      <button
+        className="delete-icon-btn"
+        type="button"
+        onClick={this.onHideMenu}
+      >
+        <img
+          alt="cross icon"
+          className="delete-icon"
+          src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1694448930/v8o4vipsr6ynzqr4dgqo.png"
+        />
+      </button>
     </div>
   )
 
@@ -65,7 +64,7 @@ class Header extends Component {
     const {showNavBarMenu} = this.state
     return (
       <>
-        <nav className="nav-bar-bg-container">
+        <nav className="nav-bar-bg-container desktop-display-nav">
           <div className="nav-bar-container">
             <div className="nav-web-logo-container">
               <img
@@ -77,6 +76,20 @@ class Header extends Component {
             </div>
             {this.renderNavItems()}
           </div>
+        </nav>
+        <nav className="nav-bar-bg-container mobile-display-nav">
+          <div className="nav-bar-container">
+            <div className="nav-web-logo-container">
+              <img
+                alt="website logo"
+                className="header-logo"
+                src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1694184061/brdrwznmkjewrdnn4iyq.png"
+              />
+              <h1 className="header-title">Tasty Kitchens</h1>
+            </div>
+            {this.renderMenuButton()}
+          </div>
+          {showNavBarMenu && this.renderNavItems()}
         </nav>
       </>
     )

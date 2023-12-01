@@ -7,9 +7,28 @@
   justify-content: space-between;
 }
 
+.desktop-display-nav {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  .desktop-display-nav {
+    display: block;
+  }
+}
 .nav-web-logo-container {
   display: flex;
   align-items: center;
+}
+
+.mobile-display-nav {
+  display: block;
+}
+
+@media screen and (min-width: 480px) {
+  .mobile-display-nav {
+    display: none;
+  }
 }
 
 .header-title {
@@ -33,7 +52,7 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 480px) {
   .delete-icon-btn {
     display: none;
   }

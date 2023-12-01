@@ -1,0 +1,19 @@
+.counter-container {
+  display: flex;
+  align-items: center;
+}
+
+.incr-decr-btn {
+  border: 1px #475569 solid;
+  background-color: transparent;
+  border-radius: 2px;
+  width: 18px;
+  height: 18px;
+}
+
+.counter-value {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #475569;
+  font-weight: 500;
+}

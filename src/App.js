@@ -3,25 +3,22 @@ import './App.css'
 import ProtectedRoute from './components/ProtectedRoute'
 import Home from './components/Home'
 import Login from './components/Login'
-
-const sortByOptions = [
-  {
-    id: 0,
-    displayText: 'Highest',
-    value: 'Highest',
-  },
-  {
-    id: 2,
-    displayText: 'Lowest',
-    value: 'Lowest',
-  },
-]
+import RestaurantDetailsRoute from './components/RestaurantDetailsRoute'
+import NotFound from './components/NotFound'
+import Cart from './components/Cart'
 
 const App = () => (
   <>
     <Switch>
       <Route exact path="/login" component={Login} />
       <ProtectedRoute exact path="/" component={Home} />
+      <ProtectedRoute
+        exact
+        path="/restaurants-list/:id"
+        component={RestaurantDetailsRoute}
+      />
+      <ProtectedRoute exact path="/cart" component={Cart} />
+      <Route component={NotFound} />
     </Switch>
   </>
 )

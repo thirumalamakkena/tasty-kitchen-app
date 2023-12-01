@@ -28,8 +28,10 @@ class Login extends Component {
     const response = await fetch(url, options)
     const data = await response.json()
     if (response.ok) {
-      this.onSuccessLogin(data.jwt_token)
-      this.setState({showError: false, username: '', password: ''})
+      this.setState(
+        {showError: false, username: '', password: ''},
+        this.onSuccessLogin(data.jwt_token),
+      )
     } else {
       this.setState({
         showError: true,
@@ -57,12 +59,12 @@ class Login extends Component {
         <div className="login-card-container">
           <form className="login-card" onSubmit={this.onSubmitLogin}>
             <img
-              alt="responsive bg"
+              alt="website login"
               className="responsive-img"
               src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1694239044/ips0yhhfyfrioceq4cmf.png"
             />
             <img
-              alt="logo"
+              alt="website logo"
               className="login-logo"
               src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1694184061/brdrwznmkjewrdnn4iyq.png"
             />
@@ -98,7 +100,7 @@ class Login extends Component {
         </div>
         <div className="login-bg-image-container">
           <img
-            alt="login imag"
+            alt="website login"
             className="login-side-img"
             src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1694194874/xphzpyqrqhbfyohevtsb.png"
           />
