@@ -2,24 +2,23 @@ import {Link} from 'react-router-dom'
 
 import './index.css'
 
-const NotFound = () => (
+const OrderPlaced = () => (
   <div className="container">
     <img
       alt="not found"
       className="not-found-img"
-      src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1701694794/cidhdk79wdxvsjf4ilch.png"
+      src="https://res.cloudinary.com/dpakgiqtz/image/upload/v1701695461/n2hsnbo8tydttdnvv7c9.png"
     />
-    <h1 className="m-title">Page Not Found</h1>
+    <h1 className="m-title">Payment Successful</h1>
     <p className="m-description">
-      we are sorry, the page you requested could not be found. Please go back to
-      homepage.
+      Thank you for ordering. Your payment is successfully completed.
     </p>
     <Link to="/">
       <button type="button" className="order-now-btn">
-        Home Page
+        Go to Home Page
       </button>
     </Link>
   </div>
 )
 
-export default NotFound
+export default OrderPlaced

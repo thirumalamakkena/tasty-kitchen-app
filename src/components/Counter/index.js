@@ -18,11 +18,10 @@ class Counter extends Component {
 
   onDecrement = () => {
     const {quantity} = this.state
-    if (quantity === 0) {
+    if (quantity === 1) {
       const {cartId} = this.props
       const cartList = JSON.parse(localStorage.getItem('cartList'))
       const newCart = cartList.filter(item => item.id !== cartId)
-      console.log(newCart)
       localStorage.setItem('cartList', JSON.stringify(newCart))
     } else {
       this.setState(prevState => ({quantity: prevState.quantity - 1}))
