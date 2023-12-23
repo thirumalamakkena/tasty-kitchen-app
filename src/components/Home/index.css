@@ -85,6 +85,14 @@
   width: 70px;
 }
 
+.loader-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .sort-opt {
   color: #475569;
   font-weight: 500;
