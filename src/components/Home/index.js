@@ -73,9 +73,7 @@ class Home extends Component {
         authorization: `Bearer ${jwtToken}`,
       },
     }
-    const res = await fetch(`http://localhost:4000/get`)
-    const da = await res.json()
-    console.log(da)
+    
     const response = await fetch(url, options)
     if (response.ok) {
       const restaurantsData = await response.json()
